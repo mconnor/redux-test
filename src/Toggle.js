@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { toggleMessage } from './actions';
 
 
 const Toggle = ({ messageVisibility, dispatch }) => (
@@ -7,11 +8,7 @@ const Toggle = ({ messageVisibility, dispatch }) => (
             {messageVisibility &&
                 <p>redux action toggled</p>
             }
-            <button onClick={() => dispatch(
-                {
-                    type: 'TOGGLE_MESSAGE'
-                }
-            )}>Toggle Me</button>
+            <button onClick={() => dispatch(toggleMessage())}>Toggle Me</button>
         </div>
 );
 
