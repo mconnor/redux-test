@@ -12,8 +12,7 @@ const MovieDetail = ({ match }) => {
 	const [ movie, setMovie ] = React.useState({});
 
 	React.useEffect(() => {
-		
-        const url = `https://api.themoviedb.org/3/movie/${match.params.id}?api_key=65e043c24785898be00b4abc12fcdaae&language=en-US`;
+        const url = `https://api.themoviedb.org/3/movie/${match.params.id}?api_key=${process.env.REACT_APP_MOVIEDB_API_KEY}&language=en-US`;
         fetch(url)
             .then( res => res.json())
             .then( res => setMovie(res.results))
