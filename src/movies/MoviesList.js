@@ -12,7 +12,9 @@ const MoviesList = ({ movies, getMovies }) => {
         getMovies();
 	}, [getMovies]);
 
-	return <MovieGrid>{movies && movies.map((movie) => <Movie key={movie.id} movie={movie} />)}</MovieGrid>;
+	return  (<MovieGrid>
+                {movies && movies.map((movie) => <Movie key={movie.id} movie={movie} />)}
+            </MovieGrid>);
 };
 
 const mapStateToProps = (state) => ({
