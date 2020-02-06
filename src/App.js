@@ -9,9 +9,9 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension'
 
 import rootReducer from './rootReducer'
-import Toggle from './Toggle'
-import MoviesList from './MoviesList';
-import MovieDetail from './MovieDetail';
+import Toggle from './toggle/Toggle'
+import MoviesList from './movies/MoviesList';
+import MovieDetail from './movies/MovieDetail';
 import logo from './logo.svg';
 import './App.css';
 
