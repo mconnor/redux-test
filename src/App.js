@@ -8,10 +8,11 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import rootReducer from './rootReducer';
+
 import Toggle from './toggle/Toggle';
 import MoviesList from './movies/MoviesList';
 import MovieDetail from './movies/MovieDetail';
-import logo from './logo.svg';
+
 import './App.css';
 
 const middleware = [ logger, thunk ];
@@ -24,7 +25,11 @@ const App = () => (
 			<div className="App">
 				<header className="App-header">
 					<Link to="/">
-                        <h1 className="App-logo"><span>&#127775;</span>Mike's Movie Data Base <span>&#127775;</span></h1>
+                        <h1 className="App-logo">
+                            <span role='img' aria-label='xxx'>&#127775;</span>
+                            Mike's Movie Data Base
+                            <span role='img' aria-label='xxx'>&#127775;</span>
+                         </h1>
 					</Link>
 				</header>
 				<Toggle />
