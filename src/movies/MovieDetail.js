@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import styled from 'styled-components';
 import Overdrive from 'react-overdrive';
@@ -15,9 +13,10 @@ const MovieDetail = ({ match }) => {
         const url = `https://api.themoviedb.org/3/movie/${match.params.id}?api_key=${process.env.REACT_APP_MOVIEDB_API_KEY}&language=en-US`;
         fetch(url)
             .then( res => res.json())
-            .then( res => setMovie(res.results))
+            .then( data => setMovie(data))
             .catch((e) => console.error('fetch error ' +e.message))
-	});
+    }, [match.params.id]);
+    
 	return (
 		<MovieWrapper backdrop={`${BACKDROP_PATH}${movie.backdrop_path}`}>
 			<MovieInfo>
