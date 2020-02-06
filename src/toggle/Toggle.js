@@ -4,7 +4,7 @@ import { toggleMessage } from './actions';
 
 import { bindActionCreators } from 'redux';
 
-const Toggle = ({ messageVisibility, toggleMessage, getMovies }) => (
+const Toggle = ({ messageVisibility, toggleMessage }) => (
 	<div>
 		{messageVisibility && <p>redux action toggled</p>}
         <button onClick={toggleMessage}>Toggle Me</button>
