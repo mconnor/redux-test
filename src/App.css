@@ -1,5 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Zhi+Mang+Xing&display=swap');
+
+
+.App-logo {
+    font-family: 'Zhi Mang Xing', cursive;
+    font-size: 1.5em;
+    color: pink;
+    font-weight: lighter;
+}
+
+.App-logo a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+}
+
+
 .App {
     text-align: center;
+   
   }
   
   .App-header {
