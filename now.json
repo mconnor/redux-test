@@ -1,0 +1,8 @@
+{
+    "version": 2,
+    "build": {
+        "env": {
+            "REACT_APP_MOVIEDB_API_KEY": "@react_app_moviedb_api_key"
+          }
+    }
+  }
