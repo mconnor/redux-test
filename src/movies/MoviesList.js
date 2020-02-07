@@ -6,19 +6,20 @@ import Movie from './Movie';
 import { getMovies } from './actions';
 import { bindActionCreators } from 'redux';
 
-const MoviesList = ({ movies, getMovies }) => {
-
+const MoviesList = ({ movies, getMovies, isLoaded }) => {
+    
 	React.useEffect(() => {
-        getMovies();
-	}, [getMovies]);
-
+        if (!isLoaded)  getMovies();
+	}, [getMovies, isLoaded]);
+    if (!isLoaded) return <h1>Loading</h1>
 	return  (<MovieGrid>
                 {movies && movies.map((movie) => <Movie key={movie.id} movie={movie} />)}
             </MovieGrid>);
 };
 
 const mapStateToProps = (state) => ({
-	movies: state.movies.movies
+    movies: state.movies.movies,
+    isLoaded: state.movies.moviesLoaded,
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators(
