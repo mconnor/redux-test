@@ -11,7 +11,7 @@ const MoviesList = ({ movies, getMovies, isLoaded }) => {
 	React.useEffect(() => {
         if (!isLoaded)  getMovies();
 	}, [getMovies, isLoaded]);
-    if (!isLoaded) return <h1>Loading</h1>
+
 	return  (<MovieGrid>
                 {movies && movies.map((movie) => <Movie key={movie.id} movie={movie} />)}
             </MovieGrid>);
