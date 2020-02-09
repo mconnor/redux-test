@@ -9,7 +9,7 @@ import { bindActionCreators } from 'redux';
 const MoviesList = ({ movies, getMovies, isLoaded, moviesLoadedAt }) => {
     
 	React.useEffect(() => {
-        const oneHour =29*1000;
+        const oneHour =60*60*1000;
         console.log(  new Date() - new Date(moviesLoadedAt) )
         if (!isLoaded || ((new Date() - new Date(moviesLoadedAt) ) > oneHour)){
             console.log('getMovies')
