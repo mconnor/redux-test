@@ -6,11 +6,16 @@ import { connect } from 'react-redux';
 import { getMovies } from './actions';
 import { bindActionCreators } from 'redux';
 
-const MoviesList = ({ movies, getMovies, isLoaded }) => {
+const MoviesList = ({ movies, getMovies, isLoaded, moviesLoadedAt }) => {
     
 	React.useEffect(() => {
-        if (!isLoaded)  getMovies();
-	}, [getMovies, isLoaded]);
+        const oneHour =29*1000;
+        console.log(  new Date() - new Date(moviesLoadedAt) )
+        if (!isLoaded || ((new Date() - new Date(moviesLoadedAt) ) > oneHour)){
+            console.log('getMovies')
+            getMovies();
+        }
+	}, [getMovies, isLoaded, moviesLoadedAt]);
 
 	return  (<MovieGrid>
                 {movies && movies.map((movie) => <Movie key={movie.id} movie={movie} />)}
@@ -20,6 +25,7 @@ const MoviesList = ({ movies, getMovies, isLoaded }) => {
 const mapStateToProps = (state) => ({
     movies: state.movies.movies,
     isLoaded: state.movies.moviesLoaded,
+    moviesLoadedAt: state.movies.moviesLoadedAt,
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators(
