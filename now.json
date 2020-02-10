@@ -7,7 +7,6 @@
           }
     },
     "builds": [{ "src": "package.json", "use": "@now/static-build" }],
-    "regions": ["bru"],
     "routes": [
       { "src": "^/static/(.*)", "dest": "/static/$1" },
       { "src": "^/logo.png", "dest": "/logo.png" },
