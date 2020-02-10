@@ -1,8 +1,7 @@
 {
   "name": "redux-test",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
-  "homepage": "https://mconnor.github.io/redux-test",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -25,7 +24,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "now-build": "npm run build && mv build dist"
+    "dev": "react-scripts start -p 4000",
+    "startDev": "now dev -l 4000"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -41,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "now": "^17.0.3"
   }
 }
